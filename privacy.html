@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guard Lock Privacy Policy</title>
+<title>Guard Lock privacy policy</title>
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -13,43 +13,52 @@
   <nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
 </header>
 <main>
-<h1 class="page">Guard Lock Privacy Policy</h1>
-<p><em>Last updated: 29 October 2026</em></p>
-<p>Guard Lock is made by BlueDreams666 ("we"). This policy covers the Guard Lock iPhone app and the Guard Lock Mac app.</p>
-<p><strong>The short version:</strong> we don't collect anything. There's no Guard Lock server, no account, no analytics, no advertising and no tracking. Your alerts and photos are encrypted on your Mac and can only be opened on your iPhone. They travel through your own private iCloud storage, which we can't see.</p>
-<h2>What Guard Lock does</h2>
-<p>The Mac app notices when your Mac is unlocked, woken, logged in to, shut down, or when someone types a wrong password, and sends an alert to your iPhone. If you switch it on, the alert can include a photo from the Mac's camera. From the iPhone you can send a "Lock Mac" command back to your Mac.</p>
-<h2>What stays on your devices</h2>
-<ul>
-<li><strong>Encryption keys.</strong> When you pair, your Mac and your iPhone each make their own keys. Private keys stay in that device's Keychain. On the iPhone they are stored "this device only": they are not synced to iCloud Keychain and are not included in backups.</li>
-<li><strong>Alert history and photos.</strong> Opened alerts and their photos are kept only on your iPhone, inside the app's own protected storage. Unpairing deletes them.</li>
-<li><strong>The camera on your iPhone</strong> is used only to scan the pairing code your Mac shows on screen. Nothing it sees is recorded, stored or sent anywhere.</li></ul>
-<h2>What passes through iCloud</h2>
-<p>Alerts, photos, pairing replies and Lock Mac commands travel through the <strong>private CloudKit database in your own iCloud account</strong>, the one both your Mac and iPhone are signed in to. We have no access to it.</p>
-<ul>
-<li>Alerts, photos and commands are <strong>encrypted end to end</strong> (with Apple's CryptoKit) before they leave the device. Apple stores and delivers them but can't read them.</li>
-<li>Once your iPhone has an alert, it deletes it from iCloud. Commands are deleted once your Mac has read them.</li>
-<li>When pairing, your iPhone writes a pairing reply to that same database. It holds the iPhone's public keys and its device name, signed so the Mac can check it.</li>
-<li>Apple can see that records exist, their size and when they were made, and it sends a push notification to your iPhone whose visible text is only "New alert from your Mac". The app replaces that with the decrypted alert on your iPhone.</li></ul>
-<p>iCloud and Apple push notifications are provided by Apple under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
-<h2>The "doorbell" ping (ntfy.sh)</h2>
-<p>When you tap Lock Mac, the iPhone also sends one <strong>empty</strong> request to <a href="https://ntfy.sh">ntfy.sh</a>, a public notification service, so your Mac checks iCloud straight away instead of waiting. The request has no title, no text and no data; it goes to a random address that only your paired devices can work out. ntfy.sh learns only that a ping happened, when, and (like any website) the IP address it came from. The command itself never goes through ntfy.sh. ntfy.sh is run by a third party under its own <a href="https://docs.ntfy.sh/privacy/">privacy policy</a>.</p>
-<p>The Mac app can also send alerts through ntfy.sh instead of the iPhone app if you set it up that way. That's off when the iPhone app is paired, unless you turn on "Also send through ntfy". Alerts sent that way are not end-to-end encrypted.</p>
-<h2>Buying and license checks (Lemon Squeezy)</h2>
-<p>The Mac app is sold through <a href="https://www.lemonsqueezy.com">Lemon Squeezy</a>, which handles payment, tax and license keys as the merchant of record. When you buy, Lemon Squeezy receives your name, email address and payment details under its own <a href="https://www.lemonsqueezy.com/privacy">privacy policy</a>. We see your order (name, email, country), not your card details.</p>
-<p>To check your license, the Mac app sends your license key and your Mac's name to Lemon Squeezy when you activate it and about once a week after that. Nothing else is sent: no alerts, no usage data.</p>
-<h2>Update check (GitHub)</h2>
-<p>About once a day the Mac app asks <a href="https://github.com">GitHub</a>, where its downloads are hosted, which version is the newest. The request carries nothing about you or your Mac; GitHub sees only that someone asked, and (like any website) the IP address it came from, under its own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>. If there's a newer version, the app shows a link to it. Nothing downloads or installs by itself.</p>
-<h2>What we collect</h2>
-<p>Apart from the order details above, nothing. We don't run servers that receive your data, and the apps contain no analytics, crash-reporting, advertising or tracking code. If you choose to share crash reports with developers in your iPhone's settings, Apple may pass anonymous crash logs to us through App Store Connect, as it does for every app.</p>
+<h1 class="page">Privacy policy</h1>
+<p class="small">Last updated 29 October 2026</p>
+
+<p>Guard Lock is made by BlueDreams666, which is me. This covers both the Guard Lock Mac app and the Guard Lock iPhone app.</p>
+<p>I don't collect anything. There's no Guard Lock server, no account, no analytics, no ads and no tracking. Alerts and photos are encrypted on your Mac and can only be opened on your iPhone, and on the way they pass through your own private iCloud storage, which I can't see. The details are below.</p>
+
+<h2>What the apps do</h2>
+<p>The Mac app notices when your Mac is unlocked, woken, logged in to or shut down, or when someone types a wrong password, and sends an alert to your iPhone. If you turn the option on, the alert can include a photo from the Mac's camera. From the iPhone you can send a "Lock Mac" command back to the Mac.</p>
+
+<h2>What stays on each device</h2>
+<p><strong>Encryption keys.</strong> When you pair, the Mac and the iPhone each create their own keys. The private keys stay in that device's Keychain. On the iPhone they're stored as "this device only", which means they don't sync to iCloud Keychain and aren't part of backups.</p>
+<p><strong>Alert history and photos.</strong> Alerts you've opened, and their photos, are kept only on your iPhone, in the app's own protected storage. Unpairing deletes them.</p>
+<p><strong>The iPhone camera</strong> is only used to scan the pairing code on your Mac's screen. Nothing it sees is recorded, kept or sent.</p>
+
+<h2>What goes through iCloud</h2>
+<p>Alerts, photos, pairing replies and Lock Mac commands travel through the private CloudKit database in your own iCloud account, the one your Mac and iPhone are both signed in to. I have no access to it.</p>
+<p>Alerts, photos and commands are encrypted end to end with Apple's CryptoKit before they leave the device. Apple stores and delivers them but can't read them.</p>
+<p>As soon as your iPhone has received an alert, it deletes it from iCloud. Commands are deleted once the Mac has read them.</p>
+<p>During pairing, the iPhone writes a pairing reply to the same database. It contains the iPhone's public keys and its device name, signed so the Mac can verify it.</p>
+<p>Apple can see that these records exist, how big they are and when they were created. Apple also delivers a push notification to your iPhone whose visible text is just "New alert from your Mac"; on your iPhone the app swaps that for the decrypted alert. iCloud and Apple push notifications are provided by Apple under Apple's Privacy Policy.</p>
+
+<h2>The ntfy.sh "doorbell"</h2>
+<p>When you tap Lock Mac, the iPhone also sends one empty request to ntfy.sh, a public notification service, so the Mac checks iCloud immediately instead of waiting. The request has no title, no text and no data, and it goes to a random address that only your paired devices can work out. All ntfy.sh learns is that a ping happened, when, and (as with any website) the IP address it came from. The command itself never passes through ntfy.sh. ntfy.sh is run by a third party under its own privacy policy.</p>
+<p>The Mac app can also be set up to send alerts through ntfy.sh instead of the iPhone app. That's off while the iPhone app is paired, unless you turn on "Also send through ntfy". Alerts sent that way are not end-to-end encrypted.</p>
+
+<h2>Buying a license (Lemon Squeezy)</h2>
+<p>The Mac app is sold through Lemon Squeezy, which handles payment, tax and license keys as the merchant of record. When you buy, Lemon Squeezy receives your name, email address and payment details under its own privacy policy. I see your order (name, email, country) but not your card.</p>
+<p>To check your license, the Mac app sends your license key and your Mac's name to Lemon Squeezy when you activate it and roughly once a week after that. Nothing else is sent: no alerts and no usage data.</p>
+
+<h2>Checking for updates (GitHub)</h2>
+<p>About once a day the Mac app asks GitHub, where the downloads live, what the newest version is. The request carries nothing about you or your Mac. GitHub only sees that someone asked and (as with any website) the IP address it came from, under GitHub's own privacy statement. If there's a newer version, the app shows a link to it. Nothing downloads or installs on its own.</p>
+
+<h2>What I collect</h2>
+<p>Other than the order details above, nothing. I don't run any servers that receive your data, and neither app contains analytics, crash reporting, advertising or tracking code. If you've chosen to share crash reports with developers in your iPhone's settings, Apple may pass anonymous crash logs to me through App Store Connect, the same as it does for every app.</p>
+
 <h2>Children</h2>
-<p>Guard Lock is not aimed at children and collects no data from anyone, children included.</p>
+<p>Guard Lock isn't aimed at children, and it collects no data from anyone, children included.</p>
+
 <h2>Deleting your data</h2>
-<p>In the iPhone app, open <strong>Settings › Unpair This iPhone</strong>. That deletes the keys, the alert history and the photos on the iPhone, and everything Guard Lock stored in your iCloud. Then unpair on the Mac too. Deleting the app also deletes the history and photos on the iPhone.</p>
+<p>In the iPhone app, go to Settings › Unpair This iPhone. That deletes the keys, the alert history and the photos on the iPhone, along with everything Guard Lock stored in your iCloud. Then unpair on the Mac as well. Deleting the iPhone app also deletes its history and photos.</p>
+
 <h2>Changes</h2>
-<p>If this policy changes, the new version will be posted here with a new date.</p>
+<p>If this policy changes, I'll post the new version here with a new date.</p>
+
 <h2>Contact</h2>
-<p>Questions about privacy: <a href="mailto:barmaor.co@gmail.com">barmaor.co@gmail.com</a></p>
+<p>Privacy questions: <a href="mailto:barmaor.co@gmail.com">barmaor.co@gmail.com</a></p>
 </main>
 <footer>Guard Lock is made by BlueDreams666. <a href="./">Home</a> · <a href="support.html">Support</a></footer>
 </body>
