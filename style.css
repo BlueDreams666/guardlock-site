@@ -38,6 +38,7 @@ p { margin: 0 0 14px; }
 .get { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin: 0 0 14px; }
 .get .dl { display: inline-block; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none; padding: 11px 20px; border-radius: 8px; }
 .get .dl:hover { background: #0000b8; }
+.get .soon { color: var(--muted); }
 .small { font-size: 0.92rem; color: var(--muted); }
 ul, ol { padding-left: 22px; margin: 0 0 16px; }
 li { margin-bottom: 8px; }
