@@ -23,11 +23,12 @@ body {
   font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 a { color: var(--link); text-underline-offset: 3px; }
-header.site { display: flex; align-items: center; gap: 10px; max-width: 700px; margin: 0 auto; padding: 18px 20px 0; font-size: 15px; }
+header.site { display: flex; align-items: center; gap: 10px; max-width: 700px; margin: 0 auto; padding: 8px 20px 0; font-size: 15px; }
 header.site img { width: 28px; height: 28px; }
 header.site a.home { font-weight: 600; color: var(--text); text-decoration: none; }
 header.site nav { margin-left: auto; display: flex; gap: 16px; }
 header.site nav a { color: var(--muted); text-decoration: none; }
+header.site nav a, header.site a.home { padding: 10px 0; }
 header.site nav a:hover { color: var(--text); }
 main { max-width: 700px; margin: 0 auto; padding: 28px 20px 56px; }
 h1 { font-size: 2.3rem; line-height: 1.12; margin: 18px 0 12px; letter-spacing: -0.02em; }
@@ -86,7 +87,9 @@ body.pp { text-align: center; }
 .pp .store small { display: block; font-size: .7rem; letter-spacing: .01em; }
 .pp .store b { display: block; font-size: 1.28rem; font-weight: 600; letter-spacing: -.01em; }
 .pp .get .soon { background: none; color: var(--muted); border: 1.5px dashed var(--line); font-weight: 500; font-style: italic; padding: 10px 18px; border-radius: 12px; }
-.pp .shots { justify-content: center; margin: 34px auto 8px; }
+.pp .shots { margin: 34px auto 8px; }
+.pp .shots figure:first-child { margin-left: auto; }
+.pp .shots figure:last-child { margin-right: auto; }
 .pp .shots figcaption { font-style: italic; }
 @media (max-width: 520px) {
   .pp main { padding: 40px 18px 28px; }
