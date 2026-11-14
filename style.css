@@ -95,3 +95,6 @@ body.pp { text-align: center; }
   .pp main { padding: 40px 18px 28px; }
   .pp h2::before { margin-top: 36px; }
 }
+
+/* Even line lengths, no stray last words */
+p, li, .pp main > p, .pp main > ul, .pp main > ol { text-wrap: balance; }
