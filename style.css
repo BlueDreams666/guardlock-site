@@ -83,3 +83,6 @@ footer a:hover { color: var(--ink); }
   h2 { margin-top: 52px; }
 }
 footer { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+
+/* No single stray word on the last line */
+li { text-wrap: pretty; }
