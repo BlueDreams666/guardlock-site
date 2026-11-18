@@ -1,100 +1,85 @@
+/* Guard Lock: a night-watch page. Dark like the app, Red Hat Display for headlines, Red Hat Text for reading. */
 :root {
-  --bg: #fff;
-  --text: #11131a;
-  --muted: #5b6070;
-  --line: #e3e5ec;
-  --blue: #053A4F;
-  --link: #053A4F;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0b10;
-    --text: #eceef4;
-    --muted: #9da1b0;
-    --line: #262833;
-    --link: #3092B5;
-  }
+  color-scheme: dark;
+  --night: #090b0e;
+  --panel: #12161b;
+  --ink: #eaedf0;
+  --soft: #9ba3ab;
+  --rule: #232930;
+  --accent: #3092B5;
+  --select: rgba(48, 146, 181, .32);
+  --display: "Red Hat Display", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --text: "Red Hat Text", -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: var(--night);
+  color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--text);
+  -webkit-font-smoothing: antialiased;
 }
-a { color: var(--link); text-underline-offset: 3px; }
-header.site { display: flex; align-items: center; gap: 10px; max-width: 700px; margin: 0 auto; padding: 8px 20px 0; font-size: 15px; }
-header.site img { width: 28px; height: 28px; }
-header.site a.home { font-weight: 600; color: var(--text); text-decoration: none; }
-header.site nav { margin-left: auto; display: flex; gap: 16px; }
-header.site nav a { color: var(--muted); text-decoration: none; }
-header.site nav a, header.site a.home { padding: 10px 0; }
-header.site nav a:hover { color: var(--text); }
-main { max-width: 700px; margin: 0 auto; padding: 28px 20px 56px; }
-h1 { font-size: 2.3rem; line-height: 1.12; margin: 18px 0 12px; letter-spacing: -0.02em; }
-h1.page { font-size: 2rem; margin-top: 8px; }
-h2 { font-size: 1.15rem; margin: 34px 0 6px; }
-p { margin: 0 0 14px; }
-.sub { font-size: 1.12rem; color: var(--muted); margin: 0 0 22px; max-width: 34em; }
-.get { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; margin: 0 0 14px; }
-.get .dl { display: inline-block; background: var(--blue); color: #fff; font-weight: 600; text-decoration: none; padding: 11px 20px; border-radius: 8px; }
-.get .dl:hover { background: #0a4a64; }
-.get .soon { color: var(--muted); }
-.small { font-size: 0.92rem; color: var(--muted); }
-ul, ol { padding-left: 22px; margin: 0 0 16px; }
-li { margin-bottom: 8px; }
-.shots { display: flex; gap: 14px; margin: 26px 0 8px; overflow-x: auto; padding-bottom: 6px; }
-.shots figure { margin: 0; flex: 0 0 31%; min-width: 180px; }
-.shots img { width: 100%; height: auto; border-radius: 18px; border: 1px solid var(--line); }
-.shots figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
-.q { font-weight: 600; margin-bottom: 2px; }
-footer { max-width: 700px; margin: 0 auto; padding: 16px 20px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
-footer a { color: inherit; }
-:root { --pp: var(--link); }
+::selection { background: var(--select); }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-/* Hand-made look: one calm centered column, shared by the home, help and privacy pages */
-body.pp { text-align: center; }
-.pp main { max-width: 680px; margin: 0 auto; padding: 56px 22px 36px; }
-.pp h1 { font: 700 clamp(2.15rem, 6.4vw, 2.75rem)/1.08 "New York", "Iowan Old Style", Georgia, serif; letter-spacing: -.015em; margin: 0 auto 12px; max-width: 16em; text-wrap: balance; }
-.pp h1 + .sub, .pp h1 + .small, .pp .top + .sub { font: italic 1.08rem/1.55 "New York", "Iowan Old Style", Georgia, serif; color: var(--muted); max-width: 31em; margin: 0 auto 26px; text-wrap: pretty; }
-.pp main > p, .pp main > ul, .pp main > ol, .pp main > .card { max-width: 33em; margin-left: auto; margin-right: auto; text-wrap: pretty; }
-.pp h2 { font: italic 600 1.32rem/1.3 "New York", "Iowan Old Style", Georgia, serif; color: var(--pp); letter-spacing: 0; margin: 0 auto 10px; max-width: 26em; text-wrap: balance; }
-.pp h2::before { content: ""; display: block; margin-top: 52px; }
-.pp ul, .pp ol { list-style: none; padding: 0; }
-.pp li { margin: 0 0 12px; }
-.pp ol { counter-reset: step; }
-.pp ol li { counter-increment: step; }
-.pp ol li::before { content: counter(step); display: block; width: 26px; height: 26px; margin: 0 auto 4px; border: 1.5px solid var(--pp); border-radius: 50%;
-                    font: italic 600 .9rem/23px "New York", Georgia, serif; color: var(--pp); }
-.pp strong { font-weight: 650; }
-.pp a { color: var(--pp); }
-.pp .q { font-weight: 650; margin-top: 26px; margin-bottom: 4px; }
-.pp .small { font-size: .92rem; color: var(--muted); }
-.pp .card { text-align: center; }
-.pp main > p.note { display: block; width: fit-content; max-width: 100%; margin: 48px auto 0; padding: 16px 24px; border: 1px solid var(--line); border-radius: 16px; font-size: 1rem; color: var(--muted); }
-.pp header.site { justify-content: center; flex-wrap: wrap; }
-.pp header.site nav { margin-left: 18px; }
-.pp footer { text-align: center; border-top: 0; padding-top: 8px; }
-.pp footer a { margin: 0 9px; }
-.pp .hero-icon { display: block; width: 96px; height: 96px; margin: 0 auto 22px; border-radius: 22px; rotate: -4deg; box-shadow: 0 12px 30px rgba(0,0,0,.18); }
-.pp .tally { margin: 0 auto 22px; }
-.pp .top { flex-direction: column; justify-content: center; gap: 18px; margin-bottom: 12px; }
-.pp .get { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 18px; margin: 4px auto 12px; }
-.pp .store { display: inline-flex; align-items: center; gap: 10px; background: #000; color: #fff; border: 1px solid #a6a6a6; border-radius: 12px;
-             padding: 7px 18px 7px 14px; text-decoration: none; line-height: 1.1; text-align: left; transition: transform .15s; }
-.pp .store:hover { transform: translateY(-1px); }
-.pp .store svg { width: 22px; height: 26px; fill: #fff; flex: none; }
-.pp .store small { display: block; font-size: .7rem; letter-spacing: .01em; }
-.pp .store b { display: block; font-size: 1.28rem; font-weight: 600; letter-spacing: -.01em; }
-.pp .get .soon { background: none; color: var(--muted); border: 1.5px dashed var(--line); font-weight: 500; font-style: italic; padding: 10px 18px; border-radius: 12px; }
-.pp .shots { margin: 34px auto 8px; }
-.pp .shots figure:first-child { margin-left: auto; }
-.pp .shots figure:last-child { margin-right: auto; }
-.pp .shots figcaption { font-style: italic; }
-@media (max-width: 520px) {
-  .pp main { padding: 40px 18px 28px; }
-  .pp h2::before { margin-top: 36px; }
+header.site, main, footer { width: min(100% - 40px, 46rem); margin-inline: auto; }
+header.site { display: flex; align-items: center; gap: 10px; padding-top: 14px; font: 600 1rem/1 var(--display); }
+header.site img { width: 30px; height: 30px; border-radius: 7px; }
+header.site a.home { color: var(--ink); text-decoration: none; padding: 12px 0; }
+header.site nav { margin-left: auto; display: flex; gap: 20px; font-family: var(--text); font-weight: 500; font-size: .95rem; }
+header.site nav a { color: var(--soft); text-decoration: none; padding: 12px 0; }
+header.site nav a:hover { color: var(--ink); }
+
+main { padding: 56px 0 24px; }
+h1 { font: 800 clamp(2.5rem, 8.4vw, 3.9rem)/1 var(--display); letter-spacing: -.03em; margin: 0 0 20px; max-width: 13em; text-wrap: balance; }
+h1.page { font-size: clamp(2.2rem, 7vw, 3rem); }
+.sub { font-size: 1.2rem; line-height: 1.5; color: var(--ink); margin: 0 0 30px; max-width: 32em; text-wrap: pretty; }
+h1 + .small { margin: -8px 0 32px; }
+h2 { font: 700 1.55rem/1.2 var(--display); letter-spacing: -.015em; margin: 64px 0 14px; text-wrap: balance; }
+p { margin: 0 0 16px; max-width: 34em; text-wrap: pretty; }
+strong { font-weight: 600; color: #fff; }
+.small { font-size: .95rem; color: var(--soft); }
+.q { font-weight: 600; margin: 30px 0 4px; }
+h2 + .q { margin-top: 8px; }
+ul { margin: 0 0 16px; padding-left: 1.2em; max-width: 34em; }
+li { margin: 0 0 8px; }
+li::marker { color: var(--soft); }
+
+/* Two ways to get it */
+.get { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 0 0 14px; }
+.get .dl { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 12px; background: var(--ink); color: var(--night);
+           font: 700 1.02rem/1 var(--display); text-decoration: none; }
+.get .dl:hover { background: #fff; }
+.store { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 20px 0 16px; border-radius: 12px; background: #000; color: #fff;
+         border: 1px solid #3a4148; font: 600 1.02rem/1 var(--display); text-decoration: none; }
+.store:hover { border-color: #6b747c; }
+.store svg { width: 18px; height: 22px; fill: #fff; flex: none; }
+.get + .small { margin-bottom: 0; }
+
+/* The app, three screens */
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 48px 0 0; }
+.shots figure { margin: 0; }
+.shots img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--rule); background: var(--panel); }
+.shots figcaption { font-size: .9rem; color: var(--soft); margin-top: 10px; }
+
+/* Setup steps */
+ol { list-style: none; counter-reset: step; margin: 0 0 18px; padding: 0; max-width: 34em; }
+ol li { counter-increment: step; position: relative; padding-left: 2.2rem; margin: 0 0 12px; }
+ol li::before { content: counter(step); position: absolute; left: 0; top: 0; font: 800 1.25rem/1.35 var(--display); color: var(--accent); font-variant-numeric: tabular-nums; }
+
+footer { padding: 28px 0 56px; margin-top: 40px; border-top: 1px solid var(--rule); color: var(--soft); font-size: .95rem; }
+footer a { color: var(--soft); }
+footer a:hover { color: var(--ink); }
+
+@media (max-width: 620px) {
+  main { padding-top: 36px; }
+  .sub { font-size: 1.1rem; }
+  .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -20px; padding: 0 20px 6px; scrollbar-width: none; }
+  .shots::-webkit-scrollbar { display: none; }
+  .shots figure { flex: 0 0 62%; scroll-snap-align: start; }
+  h2 { margin-top: 52px; }
 }
-
-/* Even line lengths, no stray last words */
-p, li, .pp main > p, .pp main > ul, .pp main > ol { text-wrap: balance; }
+footer { display: flex; flex-wrap: wrap; gap: 6px 20px; }
