@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guard Lock privacy policy</title>
-<meta name="theme-color" content="#090b0e">
+<meta name="theme-color" content="#0d1730">
 <link rel="icon" href="favicon.png">
 <link rel="preload" href="fonts/red-hat-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/red-hat-text-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <header class="site">
@@ -18,17 +18,17 @@
 </header>
 <main>
 <h1 class="page">Privacy policy</h1>
-<p class="small">Last updated 8 November 2026</p>
+<p class="small">Last updated 19 November 2026</p>
 
 <p>Guard Lock is made by BlueDreams666, which is me. This covers both the Guard Lock Mac app and the Guard Lock iPhone app.</p>
 <p>I don't collect anything. There's no Guard Lock server, no account, no analytics, no ads and no tracking. Alerts, photos, videos and your Mac's location are encrypted on your Mac and can only be opened on your iPhone, and on the way they pass through your own private iCloud storage, which I can't see. The details are below.</p>
 
 <h2>What the apps do</h2>
-<p>The Mac app notices when your Mac is unlocked, woken, logged in to or shut down, when someone types a wrong password or tries a fingerprint it doesn't know, and when the lid is opened, the charger is unplugged, or a USB device or display is plugged in while it's locked. It sends an alert about each to your iPhone.</p>
+<p>The Mac app notices when your Mac is unlocked, woken, logged in to or shut down, when someone types a wrong password or tries a fingerprint it doesn't know, and when the lid is opened, the charger is unplugged, the Mac loses Wi-Fi, or a USB device or display is plugged in while it's locked. It sends an alert about each to your iPhone.</p>
 <p><strong>Camera.</strong> If you turn the options on, the alert can include a photo from the Mac's camera, and after a wrong password a few seconds of video (no sound; the microphone is never used). The Mac's built-in face detection counts how many faces are in the photo, on the Mac itself. It doesn't recognize who anyone is.</p>
-<p><strong>From the iPhone</strong> you can send commands back to the Mac: Lock Mac, Take Photo, Locate Mac and Sound Alarm. The iPhone asks for Face ID before Take Photo, Locate Mac and Sound Alarm.</p>
+<p><strong>From the iPhone</strong> you can send commands back to the Mac: Lock Mac, Take Photo, Locate Mac, Sound Alarm and Pause Alerts for an Hour. The iPhone asks for Face ID before all of them except Lock Mac, and before Lock Mac too when you use it from a notification on the lock screen. You can also lock the Mac from the Apple Watch app and from a Control Center button. These commands travel the same way as the iPhone's, described below.</p>
 <p><strong>Location.</strong> Only if you turn on "Let my iPhone locate this Mac" in the Mac app, and only when you tap Locate Mac on your iPhone, the Mac asks macOS Location Services where it is and sends that, encrypted, to your iPhone. It never tracks your location in the background, and nothing is kept on the Mac.</p>
-<p><strong>Check-ins.</strong> Every few hours the Mac updates one small encrypted record that just says it's still running, so your iPhone can warn you if it goes quiet.</p>
+<p><strong>Check-ins.</strong> Every few hours the Mac updates one small encrypted record that says it's still running and which version of Guard Lock it has, so your iPhone can warn you if it goes quiet.</p>
 
 <h2>What stays on each device</h2>
 <p><strong>Encryption keys.</strong> When you pair, the Mac and the iPhone each create their own keys. The private keys stay in that device's Keychain. On the iPhone they're stored as "this device only", which means they don't sync to iCloud Keychain and aren't part of backups.</p>
@@ -41,10 +41,10 @@
 <p>Alerts, photos, videos, locations and commands are encrypted end to end with Apple's CryptoKit before they leave the device. Apple stores and delivers them but can't read them.</p>
 <p>As soon as your iPhone has received an alert, it deletes it from iCloud. Commands are deleted once the Mac has read them. The check-in record is overwritten each time, so there's only ever one.</p>
 <p>During pairing, the iPhone writes a pairing reply to the same database. It contains the iPhone's public keys and its device name, signed so the Mac can verify it.</p>
-<p>Apple can see that these records exist, how big they are and when they were created. Apple also delivers a push notification to your iPhone whose visible text is just "New alert from your Mac"; on your iPhone the app swaps that for the decrypted alert. iCloud and Apple push notifications are provided by Apple under Apple's Privacy Policy.</p>
+<p>Apple can see that these records exist, how big they are and when they were created. Apple also delivers a push notification to your iPhone whose visible text is just "New alert from your Mac. Open Guard Lock to see it."; on your iPhone the app swaps that for the decrypted alert. iCloud and Apple push notifications are provided by Apple under Apple's Privacy Policy.</p>
 
 <h2>The ntfy.sh "doorbell"</h2>
-<p>When you tap Lock Mac, the iPhone also sends one empty request to ntfy.sh, a public notification service, so the Mac checks iCloud immediately instead of waiting. The request has no title, no text and no data, and it goes to a random address that only your paired devices can work out. All ntfy.sh learns is that a ping happened, when, and (as with any website) the IP address it came from. The command itself never passes through ntfy.sh. ntfy.sh is run by a third party under its own privacy policy.</p>
+<p>When you tap Lock Mac, the iPhone also sends one empty request to ntfy.sh, a public notification service, so the Mac checks iCloud immediately instead of waiting. It goes to a random address that only your paired devices can work out. To hear that ping, the Mac keeps a connection open to ntfy.sh while it's awake. So ntfy.sh can see the Mac's IP address, when it's online and that it runs Guard Lock, and, for each ping, when it happened and the IP address it came from. ntfy.sh keeps each ping for about 12 hours. The ping is empty: it never contains your alerts, your commands or anything that identifies you, and it can't make your Mac do anything except check iCloud for a signed command. The command itself never passes through ntfy.sh. ntfy.sh is run by a third party under its own privacy policy.</p>
 
 <h2>Checking for updates (GitHub)</h2>
 <p>About once a day the Mac app asks GitHub, where the downloads live, what the newest version is. The request carries nothing about you or your Mac. GitHub only sees that someone asked and (as with any website) the IP address it came from, under GitHub's own privacy statement. If there's a newer version, the app downloads it from GitHub, checks that it's signed by me and notarized by Apple, and installs it while you're at the Mac. You can turn that off in the Guard Lock window and just get a link instead. The download is a plain request with nothing about you in it.</p>

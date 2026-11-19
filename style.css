@@ -1,13 +1,13 @@
 /* Guard Lock: a night-watch page. Dark like the app, Red Hat Display for headlines, Red Hat Text for reading. */
 :root {
   color-scheme: dark;
-  --night: #090b0e;
-  --panel: #12161b;
-  --ink: #eaedf0;
-  --soft: #9ba3ab;
-  --rule: #232930;
-  --accent: #3092B5;
-  --select: rgba(48, 146, 181, .32);
+  --night: #0d1730;
+  --panel: #15213f;
+  --ink: #eef1f6;
+  --soft: #a2adc4;
+  --rule: #22304f;
+  --accent: #93b6f2;
+  --select: rgba(147, 182, 242, .3);
   --display: "Red Hat Display", -apple-system, "Helvetica Neue", Arial, sans-serif;
   --text: "Red Hat Text", -apple-system, "Helvetica Neue", Arial, sans-serif;
 }
@@ -54,8 +54,8 @@ li::marker { color: var(--soft); }
            font: 700 1.02rem/1 var(--display); text-decoration: none; }
 .get .dl:hover { background: #fff; }
 .store { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 20px 0 16px; border-radius: 12px; background: #000; color: #fff;
-         border: 1px solid #3a4148; font: 600 1.02rem/1 var(--display); text-decoration: none; }
-.store:hover { border-color: #6b747c; }
+         border: 1px solid #34436a; font: 600 1.02rem/1 var(--display); text-decoration: none; }
+.store:hover { border-color: #6b7a9a; }
 .store svg { width: 18px; height: 22px; fill: #fff; flex: none; }
 .get + .small { margin-bottom: 0; }
 
