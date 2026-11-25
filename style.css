@@ -77,7 +77,7 @@ footer a:hover { color: var(--ink); }
 @media (max-width: 620px) {
   main { padding-top: 36px; }
   .sub { font-size: 1.1rem; }
-  .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 14px; margin-inline: -20px; padding: 0 20px 6px; scrollbar-width: none; }
+  .shots { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; gap: 14px; margin-inline: -20px; padding: 0 20px 6px; scrollbar-width: none; }
   .shots::-webkit-scrollbar { display: none; }
   .shots figure { flex: 0 0 62%; scroll-snap-align: start; }
   h2 { margin-top: 52px; }
